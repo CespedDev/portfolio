@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -21,9 +22,11 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "docs",
+            "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "baseHref": "/portfolio/",
             "assets": [
               {
                 "glob": "**/*",
@@ -60,6 +63,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "Portfolio:build:development"
+          },
           "configurations": {
             "production": {
               "buildTarget": "Portfolio:build:production"
