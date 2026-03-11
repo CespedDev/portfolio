@@ -1,0 +1,78 @@
+<p-toolbar>
+  <ng-template #center>
+    <div class="topbar-content">
+      <span class="topbar-title">Carlos Cabrera</span>
+      
+      <!-- Desktop Menu -->
+      <div class="desktop-menu">
+        <p-button label="Home" icon="pi pi-home" [routerLink]="['/home']" text />
+        <p-button label="Portfolio" icon="pi pi-briefcase" text />
+        <p-button label="Hobbies" icon="pi pi-heart" text />
+        <p-button label="Bio" icon="pi pi-user" text />
+        <p-button label="Contact" icon="pi pi-envelope" text />
+        <p-button label="Download CV" icon="pi pi-download" outlined />
+      </div>
+      
+      <!-- Mobile Hamburger -->
+      <p-button 
+        class="mobile-menu-button" 
+        icon="pi pi-bars" 
+        (onClick)="mobileMenuVisible = true" 
+        text 
+      />
+    </div>
+  </ng-template>
+</p-toolbar>
+
+<!-- Mobile Drawer Menu -->
+<p-drawer [(visible)]="mobileMenuVisible" position="right" [appendTo]="'body'">
+  <ng-template #header>
+    <span class="drawer-title">Menu</span>
+  </ng-template>
+  
+  <div class="mobile-menu-items">
+    <p-button 
+      label="Home" 
+      icon="pi pi-home" 
+      [routerLink]="['/home']" 
+      (onClick)="mobileMenuVisible = false"
+      text 
+      styleClass="mobile-menu-item"
+    />
+    <p-button 
+      label="Portfolio" 
+      icon="pi pi-briefcase" 
+      (onClick)="mobileMenuVisible = false"
+      text 
+      styleClass="mobile-menu-item"
+    />
+    <p-button 
+      label="Hobbies" 
+      icon="pi pi-heart" 
+      (onClick)="mobileMenuVisible = false"
+      text 
+      styleClass="mobile-menu-item"
+    />
+    <p-button 
+      label="Bio" 
+      icon="pi pi-user" 
+      (onClick)="mobileMenuVisible = false"
+      text 
+      styleClass="mobile-menu-item"
+    />
+    <p-button 
+      label="Contact" 
+      icon="pi pi-envelope" 
+      (onClick)="mobileMenuVisible = false"
+      text 
+      styleClass="mobile-menu-item"
+    />
+    <p-button 
+      label="Download CV" 
+      icon="pi pi-download" 
+      (onClick)="mobileMenuVisible = false"
+      outlined 
+      styleClass="mobile-menu-item"
+    />
+  </div>
+</p-drawer>

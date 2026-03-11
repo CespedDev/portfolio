@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+/* PrimeIcons */
+@import "primeicons/primeicons.css";
+
+:root {
+  --navbar-height: 4rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 3.5rem;
+  }
+}
+
+/* Reset body margins */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Drawer fix - ensure drawer content is not affected by overlay */
+.p-drawer {
+  opacity: 1 !important;
+  border: none !important;
+}
+
+.p-drawer-content {
+  opacity: 1 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

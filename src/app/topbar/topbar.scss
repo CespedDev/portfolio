@@ -1,0 +1,99 @@
+:host {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--navbar-height);
+}
+
+:host ::ng-deep {
+  .p-toolbar {
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+  }
+  
+  .p-toolbar-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .p-drawer {
+    z-index: 2000 !important;
+  }
+  
+  .p-drawer-mask {
+    z-index: 1500 !important;
+  }
+  
+  .mobile-menu-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .mobile-menu-item .p-button-label {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+.topbar-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.topbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.drawer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: flex;
+  }
+  
+  .topbar-content {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .topbar-title {
+    font-size: 1.2rem;
+    margin-right: 0;
+  }
+}
