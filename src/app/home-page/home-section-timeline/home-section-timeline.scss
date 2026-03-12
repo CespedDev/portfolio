@@ -1,0 +1,125 @@
+.timeline-slide {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  padding: 4rem 2rem;
+}
+
+.timeline-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: right;
+  margin: 0 0 3rem 0;
+  padding-right: 10%;
+  width: 100%;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--p-primary-color);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--p-primary-contrast-color);
+  border-radius: 50%;
+  border: 5px solid var(--p-primary-color);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  max-width: 45%;
+  padding: 1.5rem;
+  background: var(--p-surface-100);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.left .timeline-content {
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  color: var(--p-primary-color);
+}
+
+.timeline-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--p-surface-700);
+}
+
+@media (max-width: 768px) {
+  .timeline-title {
+    font-size: 2rem;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .timeline-line {
+    left: 2rem;
+  }
+  
+  .timeline-item {
+    justify-content: flex-start !important;
+    padding-left: 4rem;
+  }
+  
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    max-width: 100%;
+    margin: 0 0 0 1rem;
+    text-align: left;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: 1.5rem;
+  }
+}

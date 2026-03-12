@@ -1,0 +1,43 @@
+.slide {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.5rem;
+  }
+  
+  .greeting {
+    font-size: 1.2rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+}
