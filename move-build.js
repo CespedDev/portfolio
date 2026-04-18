@@ -29,3 +29,12 @@ if (fs.existsSync(browserDir)) {
 } else {
   console.log('⚠ No se encontró la carpeta docs/browser/');
 }
+
+// Copiar index.html como 404.html para GitHub Pages routing
+const indexPath = path.join(docsDir, 'index.html');
+const notFoundPath = path.join(docsDir, '404.html');
+
+if (fs.existsSync(indexPath)) {
+  fs.copyFileSync(indexPath, notFoundPath);
+  console.log('✓ Archivo 404.html creado para GitHub Pages routing');
+}
