@@ -1,0 +1,39 @@
+<section class="slide work-slide">
+  <div class="work-header">
+    <h2>Featured Work</h2>
+    <p class="work-subtitle">Some of my recent projects and experiences</p>
+  </div>
+
+  <div class="work-grid">
+    @for (work of works; track work.title) {
+      <div class="work-card">
+        <div class="work-image">
+          <img [src]="work.imageUrl" [alt]="work.title" />
+        </div>
+        <div class="work-content">
+          <h3>{{ work.title }}</h3>
+          <p>{{ work.description }}</p>
+          @if (work.tags && work.tags.length > 0) {
+            <div class="work-tags">
+              @for (tag of work.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <div class="work-card work-card-more">
+      <div class="more-content">
+        <p-button 
+          label="And More" 
+          [text]="true" 
+          size="large"
+          routerLink="/work" 
+        />
+        <p class="more-description">View all my work and experiences</p>
+      </div>
+    </div>
+  </div>
+</section>
