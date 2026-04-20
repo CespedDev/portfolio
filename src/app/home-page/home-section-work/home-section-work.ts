@@ -21,19 +21,19 @@ export class HomeSectionWorkComponent {
     {
       title: 'Project One',
       description: 'Description of your first project or work experience',
-      imageUrl: '/assets/work1.jpg',
+      imageUrl: 'assets/work1.jpg',
       tags: ['Angular', 'TypeScript']
     },
     {
       title: 'Project Two',
       description: 'Description of your second project or work experience',
-      imageUrl: '/assets/work2.jpg',
+      imageUrl: 'assets/work2.jpg',
       tags: ['Web Development']
     },
     {
       title: 'Project Three',
       description: 'Description of your third project or work experience',
-      imageUrl: '/assets/work3.jpg',
+      imageUrl: 'assets/work3.jpg',
       tags: ['Full Stack']
     }
   ];
