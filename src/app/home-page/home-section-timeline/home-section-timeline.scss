@@ -1,16 +1,9 @@
 .timeline-slide {
-  min-height: calc(100vh - var(--navbar-height));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   flex-direction: column;
   padding: 4rem 2rem;
 }
 
 .timeline-title {
-  font-size: 3rem;
-  font-weight: bold;
   text-align: right;
   margin: 0 0 3rem 0;
   padding-right: 10%;
@@ -57,7 +50,7 @@
   transform: translate(-50%, -50%);
   width: 1.5rem;
   height: 1.5rem;
-  background: var(--p-primary-contrast-color);
+  background: var(--p-surface-800);
   border-radius: 50%;
   border: 5px solid var(--p-primary-color);
   z-index: 2;
@@ -66,8 +59,6 @@
 
 .timeline-content {
   padding: 1.5rem;
-  background: var(--p-surface-100);
-  border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,11 +69,18 @@
   color: var(--p-primary-color);
 }
 
+.timeline-title-item {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: var(--p-surface-900);
+}
+
 .timeline-text {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
-  color: var(--p-surface-700);
+  color: var(--p-surface-500);
 }
 
 @media (min-width: 769px) {
@@ -103,7 +101,6 @@
 
 @media (max-width: 768px) {
   .timeline-title {
-    font-size: 2rem;
     text-align: center;
     padding-right: 0;
   }

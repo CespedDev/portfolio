@@ -5,12 +5,21 @@
       
       <!-- Desktop Menu -->
       <div class="desktop-menu">
-        <p-button label="Home" icon="pi pi-home" [routerLink]="['/home']" text />
-        <p-button label="Portfolio" icon="pi pi-briefcase" text />
-        <p-button label="Hobbies" icon="pi pi-heart" text />
-        <p-button label="Bio" icon="pi pi-user" text />
-        <p-button label="Contact" icon="pi pi-envelope" text />
-        <p-button label="Download CV" icon="pi pi-download" outlined />
+        <p-button [label]="'nav.home' | translate" icon="pi pi-home" [routerLink]="['/home']" text />
+        <p-button [label]="'nav.portfolio' | translate" icon="pi pi-briefcase" text />
+        <p-button [label]="'nav.hobbies' | translate" icon="pi pi-heart" text />
+        <p-button [label]="'nav.bio' | translate" icon="pi pi-user" text />
+        <p-button [label]="'nav.contact' | translate" icon="pi pi-envelope" text />
+        <p-button [label]="'nav.downloadCV' | translate" icon="pi pi-download" outlined />
+        
+        <!-- Language Switcher -->
+        <p-button 
+          [label]="languageLabel" 
+          icon="pi pi-globe" 
+          (onClick)="switchLanguage()" 
+          text 
+          styleClass="language-button"
+        />
       </div>
       
       <!-- Mobile Hamburger -->
@@ -32,7 +41,7 @@
   
   <div class="mobile-menu-items">
     <p-button 
-      label="Home" 
+      [label]="'nav.home' | translate" 
       icon="pi pi-home" 
       [routerLink]="['/home']" 
       (onClick)="mobileMenuVisible = false"
@@ -40,39 +49,48 @@
       styleClass="mobile-menu-item"
     />
     <p-button 
-      label="Portfolio" 
+      [label]="'nav.portfolio' | translate" 
       icon="pi pi-briefcase" 
       (onClick)="mobileMenuVisible = false"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
-      label="Hobbies" 
+      [label]="'nav.hobbies' | translate" 
       icon="pi pi-heart" 
       (onClick)="mobileMenuVisible = false"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
-      label="Bio" 
+      [label]="'nav.bio' | translate" 
       icon="pi pi-user" 
       (onClick)="mobileMenuVisible = false"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
-      label="Contact" 
+      [label]="'nav.contact' | translate" 
       icon="pi pi-envelope" 
       (onClick)="mobileMenuVisible = false"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
-      label="Download CV" 
+      [label]="'nav.downloadCV' | translate" 
       icon="pi pi-download" 
       (onClick)="mobileMenuVisible = false"
       outlined 
       styleClass="mobile-menu-item"
+    />
+    
+    <!-- Language Switcher Mobile -->
+    <p-button 
+      [label]="languageLabel" 
+      icon="pi pi-globe" 
+      (onClick)="switchLanguage()" 
+      text 
+      styleClass="mobile-menu-item language-button"
     />
   </div>
 </p-drawer>

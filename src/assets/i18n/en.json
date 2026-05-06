@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "hobbies": "Hobbies",
+    "bio": "Bio",
+    "contact": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with Angular & PrimeNG"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Carlos Cabrera",
+    "title": "Videogame & FullStack Programmer"
+  },
+  "about": {
+    "title": "About Me",
+    "text": "Passionate about creating interactive experiences and developing web applications, with a solid technical foundation in C#, C++, Java, and TypeScript. I have experience with Angular and Spring Boot for full stack development, as well as with Unity and Unreal Engine for simulation and virtual environment projects. I stand out for my technical versatility, creativity, and attention to detail in designing both web and immersive experiences.",
+    "contactMe": "Contact Me",
+    "downloadCV": "Download CV"
+  },
+  "timeline": {
+    "title": "Experience",
+    "soltel": {
+      "year": "2025 - Present",
+      "title": "Soltel",
+      "text": "Development of an institutional web portal. Full stack developer (Angular / Spring Boot)."
+    },
+    "astroasis": {
+      "year": "2024 - Present",
+      "title": "AstrOasis",
+      "text": "VR Rhythm Shooter. Selected for PlayStation Talents. Director and lead programmer."
+    },
+    "greenEagle": {
+      "year": "2024",
+      "title": "Green Eagle Solution",
+      "text": "Serious game for wind farm control simulation. Design, art, and programming. Project adapted to the client's requirements."
+    },
+    "simfor": {
+      "year": "2022 - 2023",
+      "title": "SIMFOR",
+      "text": "Airport operations simulator. C# / Unity 3D Programmer and QA Tester. Dynamic configuration menus, sound system built from scratch, and traffic system."
+    },
+    "udit": {
+      "year": "2020 - 2024",
+      "title": "UDIT",
+      "text": "Bachelor's Degree in Video Game Design and Development. Honors in Fundamentals of Programming and Programming II. Winner at the Feelmotion XI short film festival in 2022."
+    }
+  },
+  "work": {
+    "title": "Featured Work",
+    "subtitle": "Some of my recent projects and experiences",
+    "andMore": "And More",
+    "viewAll": "View all my work and experiences",
+    "projects": {
+      "project1": {
+        "title": "Project One",
+        "description": "Description of your first project or work experience",
+        "tags": ["Angular", "TypeScript"]
+      },
+      "project2": {
+        "title": "Project Two",
+        "description": "Description of your second project or work experience",
+        "tags": ["Web Development"]
+      },
+      "project3": {
+        "title": "Project Three",
+        "description": "Description of your third project or work experience",
+        "tags": ["Full Stack"]
+      }
+    }
+  }
+}

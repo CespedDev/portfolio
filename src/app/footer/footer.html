@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Carlos Cabrera</h3>
+      <p class="footer-tagline">{{ 'hero.title' | translate }}</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>{{ 'footer.quickLinks' | translate }}</h4>
+      <nav class="footer-links">
+        @for (link of quickLinks; track link.route) {
+          <a 
+            pButton
+            [label]="link.label | translate" 
+            [href]="link.route"
+            [text]="true"
+            styleClass="footer-link-btn"></a>
+        }
+      </nav>
+    </div>
+  </div>
+
+  <p-divider />
+
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} Carlos Cabrera. {{ 'footer.rights' | translate }}</p>
+    <p class="footer-made">{{ 'footer.madeWith' | translate }}</p>
+  </div>
+</footer>

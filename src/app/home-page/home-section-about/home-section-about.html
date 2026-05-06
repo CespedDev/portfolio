@@ -1,15 +1,12 @@
 <section class="slide about-slide">
   <div class="about-left">
-    <h2>About Me</h2>
+    <h2>{{ 'about.title' | translate }}</h2>
     <p class="about-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Passionate about creating engaging videogames and robust web applications.
-      With experience in both frontend and backend development, I bring ideas to life
-      through clean code and creative problem-solving.
+      {{ 'about.text' | translate }}
     </p>
     <div class="about-buttons">
-      <p-button label="Contact Me" icon="pi pi-envelope" />
-      <p-button label="Download CV" icon="pi pi-download" outlined />
+      <p-button [label]="'about.contactMe' | translate" icon="pi pi-envelope" />
+      <p-button [label]="'about.downloadCV' | translate" icon="pi pi-download" outlined />
     </div>
   </div>
   

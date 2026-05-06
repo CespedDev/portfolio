@@ -1,40 +1,40 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface WorkItem {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   imageUrl: string;
-  tags?: string[];
+  tagsKey?: string;
 }
 
 @Component({
   selector: 'app-home-section-work',
-  imports: [CommonModule, ButtonModule, RouterLink],
+  imports: [ButtonModule, RouterLink, TranslateModule],
   templateUrl: './home-section-work.html',
   styleUrls: ['./home-section-work.scss'],
 })
 export class HomeSectionWorkComponent {
   works: WorkItem[] = [
     {
-      title: 'Project One',
-      description: 'Description of your first project or work experience',
-      imageUrl: 'assets/work1.jpg',
-      tags: ['Angular', 'TypeScript']
+      titleKey: 'work.projects.project1.title',
+      descriptionKey: 'work.projects.project1.description',
+      imageUrl: 'assets/images/work1.jpg',
+      tagsKey: 'work.projects.project1.tags'
     },
     {
-      title: 'Project Two',
-      description: 'Description of your second project or work experience',
-      imageUrl: 'assets/work2.jpg',
-      tags: ['Web Development']
+      titleKey: 'work.projects.project2.title',
+      descriptionKey: 'work.projects.project2.description',
+      imageUrl: 'assets/images/work2.jpg',
+      tagsKey: 'work.projects.project2.tags'
     },
     {
-      title: 'Project Three',
-      description: 'Description of your third project or work experience',
-      imageUrl: 'assets/work3.jpg',
-      tags: ['Full Stack']
+      titleKey: 'work.projects.project3.title',
+      descriptionKey: 'work.projects.project3.description',
+      imageUrl: 'assets/images/work3.jpg',
+      tagsKey: 'work.projects.project3.tags'
     }
   ];
 }
