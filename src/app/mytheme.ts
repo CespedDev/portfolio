@@ -14,37 +14,16 @@ const MyTheme = definePreset(Aura, {
       700: '#047857',
       800: '#065f46',
       900: '#064e3b',
-      950: '#022c22'
+      950: '#022c22',
     },
     colorScheme: {
-      light: {
-        primary: {
-          color: '{primary.500}',
-          contrastColor: '#ffffff',
-          hoverColor: '{primary.600}',
-          activeColor: '{primary.700}'
-        },
-        surface: {
-          0: '#ffffff',
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617'
-        }
-      },
       dark: {
         primary: {
           color: '#10b981',
-          contrastColor: '#1c1c1c',
-          hoverColor: '#34d399',
-          activeColor: '#4ade80'
+          buttonBackground: '#059669',
+          contrastColor: '#ffffff',
+          hoverColor: '#047857',
+          activeColor: '#065f46',
         },
         surface: {
           0: '#FBFBFF',
@@ -58,11 +37,11 @@ const MyTheme = definePreset(Aura, {
           700: '#2d2d2d',
           800: '#252525',
           900: '#1c1c1c',
-          950: '#0a0a0a'
-        }
-      }
-    }
-  }
+          950: '#0a0a0a',
+        },
+      },
+    },
+  },
 });
 
 export default MyTheme;

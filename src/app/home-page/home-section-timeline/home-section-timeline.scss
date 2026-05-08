@@ -58,6 +58,11 @@
 }
 
 .timeline-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-card {
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -104,22 +109,22 @@
     text-align: center;
     padding-right: 0;
   }
-  
+
   .timeline-line {
     left: 1rem;
   }
-  
+
   .timeline-item {
     justify-content: flex-start !important;
     padding-left: 4rem;
   }
-  
+
   .timeline-item.left .timeline-content,
   .timeline-item.right .timeline-content {
     max-width: 100%;
     text-align: left;
   }
-  
+
   .timeline-dot {
     position: absolute;
     left: 1rem;
