@@ -21,8 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideTranslateService({
-      defaultLanguage: 'en',
-      useDefaultLang: true,
+      fallbackLang: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => new I18nLoader(http),
