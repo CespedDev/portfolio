@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 export interface WorkItem {
   titleKey: string;
@@ -12,7 +12,7 @@ export interface WorkItem {
 
 @Component({
   selector: 'app-home-section-work',
-  imports: [ButtonModule, RouterLink, TranslateModule],
+  imports: [ButtonModule, RouterLink, TranslatePipe],
   templateUrl: './home-section-work.html',
   styleUrls: ['./home-section-work.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

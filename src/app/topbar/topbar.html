@@ -6,10 +6,10 @@
       <!-- Desktop Menu -->
       <div class="desktop-menu">
         <p-button [label]="'nav.home' | translate" icon="pi pi-home" [routerLink]="['/home']" text />
-        <p-button [label]="'nav.portfolio' | translate" icon="pi pi-briefcase" text />
-        <p-button [label]="'nav.hobbies' | translate" icon="pi pi-heart" text />
-        <p-button [label]="'nav.bio' | translate" icon="pi pi-user" text />
-        <p-button [label]="'nav.contact' | translate" icon="pi pi-envelope" text />
+        <p-button [label]="'nav.portfolio' | translate" icon="pi pi-briefcase" [routerLink]="['/portfolio']" text />
+        <p-button [label]="'nav.hobbies' | translate" icon="pi pi-heart" [routerLink]="['/hobbies']" text />
+        <p-button [label]="'nav.bio' | translate" icon="pi pi-user" [routerLink]="['/bio']" text />
+        <p-button [label]="'nav.contact' | translate" icon="pi pi-envelope" [routerLink]="['/contact']" text />
         <p-button [label]="'nav.downloadCV' | translate" icon="pi pi-download" outlined />
         
         <!-- Language Switcher -->
@@ -51,6 +51,7 @@
     <p-button 
       [label]="'nav.portfolio' | translate" 
       icon="pi pi-briefcase" 
+      [routerLink]="['/portfolio']"
       (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
@@ -58,6 +59,7 @@
     <p-button 
       [label]="'nav.hobbies' | translate" 
       icon="pi pi-heart" 
+      [routerLink]="['/hobbies']"
       (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
@@ -65,6 +67,7 @@
     <p-button 
       [label]="'nav.bio' | translate" 
       icon="pi pi-user" 
+      [routerLink]="['/bio']"
       (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
@@ -72,6 +75,7 @@
     <p-button 
       [label]="'nav.contact' | translate" 
       icon="pi pi-envelope" 
+      [routerLink]="['/contact']"
       (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"

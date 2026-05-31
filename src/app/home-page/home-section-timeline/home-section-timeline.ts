@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 export interface TimelineItem {
   key: string;
@@ -11,7 +11,7 @@ export interface TimelineItem {
   templateUrl: './home-section-timeline.html',
   styleUrls: ['./home-section-timeline.scss'],
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeSectionTimelineComponent {

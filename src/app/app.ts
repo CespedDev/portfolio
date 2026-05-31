@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Topbar } from './topbar/topbar';
@@ -14,9 +15,11 @@ import { Footer } from './footer/footer';
 })
 export class App {
   private readonly translate = inject(TranslateService);
+  private readonly doc = inject(DOCUMENT);
 
   constructor() {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    const savedLang = localStorage.getItem('lang') || 'en';
+    this.translate.use(savedLang);
+    this.doc.documentElement.lang = savedLang;
   }
 }

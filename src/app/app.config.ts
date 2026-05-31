@@ -1,19 +1,17 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, HttpClient } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
-import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { provideTranslateService, TranslateLoader, TranslationObject } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import MyTheme from './mytheme';
 
 import { routes } from './app.routes';
 
-export class CustomTranslateLoader implements TranslateLoader {
+export class I18nLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}
-
-  getTranslation(lang: string): Observable<any> {
-    return this.http.get(`/assets/i18n/${lang}.json`);
+  getTranslation(lang: string): Observable<TranslationObject> {
+    return this.http.get<TranslationObject>(`assets/i18n/${lang}.json`);
   }
 }
 
@@ -27,7 +25,7 @@ export const appConfig: ApplicationConfig = {
       useDefaultLang: true,
       loader: {
         provide: TranslateLoader,
-        useFactory: (http: HttpClient) => new CustomTranslateLoader(http),
+        useFactory: (http: HttpClient) => new I18nLoader(http),
         deps: [HttpClient]
       }
     }),
