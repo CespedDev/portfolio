@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -7,7 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './home-section-hero.html',
   styleUrls: ['./home-section-hero.scss'],
   standalone: true,
-  imports: [ButtonModule, TranslateModule]
+  imports: [ButtonModule, TranslateModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeSectionHeroComponent {
 }

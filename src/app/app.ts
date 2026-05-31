@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Topbar } from './topbar/topbar';
@@ -9,11 +9,13 @@ import { Footer } from './footer/footer';
   selector: 'app-root',
   imports: [RouterOutlet, Topbar, SocialButtonsComponent, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  constructor(private translate: TranslateService) {
-    // Configurar idioma inicial
+  private readonly translate = inject(TranslateService);
+
+  constructor() {
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }

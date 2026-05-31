@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
@@ -6,7 +6,8 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './social-buttons.html',
   styleUrls: ['./social-buttons.scss'],
   standalone: true,
-  imports: [ButtonModule]
+  imports: [ButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SocialButtonsComponent {
 }

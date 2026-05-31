@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonDirective } from 'primeng/button';
 import { Divider } from 'primeng/divider';
 import { TranslateModule } from '@ngx-translate/core';
@@ -8,7 +8,8 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [ButtonDirective, Divider, TranslateModule],
   templateUrl: './footer.html',
-  styleUrl: './footer.scss'
+  styleUrl: './footer.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {
   currentYear = new Date().getFullYear();

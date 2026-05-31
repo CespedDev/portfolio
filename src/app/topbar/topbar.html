@@ -14,7 +14,7 @@
         
         <!-- Language Switcher -->
         <p-button 
-          [label]="languageLabel" 
+          [label]="languageLabel()" 
           icon="pi pi-globe" 
           (onClick)="switchLanguage()" 
           text 
@@ -26,7 +26,7 @@
       <p-button 
         class="mobile-menu-button" 
         icon="pi pi-bars" 
-        (onClick)="mobileMenuVisible = true" 
+        (onClick)="mobileMenuVisible.set(true)" 
         text 
       />
     </div>
@@ -34,7 +34,7 @@
 </p-toolbar>
 
 <!-- Mobile Drawer Menu -->
-<p-drawer [(visible)]="mobileMenuVisible" position="right" [appendTo]="'body'">
+<p-drawer [visible]="mobileMenuVisible()" (visibleChange)="mobileMenuVisible.set($event)" position="right" [appendTo]="'body'">
   <ng-template #header>
     <span class="drawer-title">Menu</span>
   </ng-template>
@@ -44,49 +44,49 @@
       [label]="'nav.home' | translate" 
       icon="pi pi-home" 
       [routerLink]="['/home']" 
-      (onClick)="mobileMenuVisible = false"
+      (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
       [label]="'nav.portfolio' | translate" 
       icon="pi pi-briefcase" 
-      (onClick)="mobileMenuVisible = false"
+      (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
       [label]="'nav.hobbies' | translate" 
       icon="pi pi-heart" 
-      (onClick)="mobileMenuVisible = false"
+      (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
       [label]="'nav.bio' | translate" 
       icon="pi pi-user" 
-      (onClick)="mobileMenuVisible = false"
+      (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
       [label]="'nav.contact' | translate" 
       icon="pi pi-envelope" 
-      (onClick)="mobileMenuVisible = false"
+      (onClick)="mobileMenuVisible.set(false)"
       text 
       styleClass="mobile-menu-item"
     />
     <p-button 
       [label]="'nav.downloadCV' | translate" 
       icon="pi pi-download" 
-      (onClick)="mobileMenuVisible = false"
+      (onClick)="mobileMenuVisible.set(false)"
       outlined 
       styleClass="mobile-menu-item"
     />
     
     <!-- Language Switcher Mobile -->
     <p-button 
-      [label]="languageLabel" 
+      [label]="languageLabel()" 
       icon="pi pi-globe" 
       (onClick)="switchLanguage()" 
       text 

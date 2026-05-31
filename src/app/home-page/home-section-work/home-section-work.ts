@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -15,6 +15,7 @@ export interface WorkItem {
   imports: [ButtonModule, RouterLink, TranslateModule],
   templateUrl: './home-section-work.html',
   styleUrls: ['./home-section-work.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeSectionWorkComponent {
   works: WorkItem[] = [

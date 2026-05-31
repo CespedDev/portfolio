@@ -4,70 +4,28 @@
   <div class="timeline-container">
     <div class="timeline-line"></div>
 
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3 class="timeline-year">{{ 'timeline.soltel.year' | translate }}</h3>
-        <div class="timeline-card content-card">
-          <h4 class="timeline-title-item">{{ 'timeline.soltel.title' | translate }}</h4>
-          <p class="timeline-text">
-            {{ 'timeline.soltel.text' | translate }}
-          </p>
-        </div>
+    @for (item of timelineItems; track item.key) {
+      <div [class]="'timeline-item ' + item.side">
+        @if (item.side === 'left') {
+          <div class="timeline-content">
+            <h3 class="timeline-year">{{ 'timeline.' + item.key + '.year' | translate }}</h3>
+            <div class="timeline-card content-card">
+              <h4 class="timeline-title-item">{{ 'timeline.' + item.key + '.title' | translate }}</h4>
+              <p class="timeline-text">{{ 'timeline.' + item.key + '.text' | translate }}</p>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        } @else {
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-year">{{ 'timeline.' + item.key + '.year' | translate }}</h3>
+            <div class="timeline-card content-card">
+              <h4 class="timeline-title-item">{{ 'timeline.' + item.key + '.title' | translate }}</h4>
+              <p class="timeline-text">{{ 'timeline.' + item.key + '.text' | translate }}</p>
+            </div>
+          </div>
+        }
       </div>
-
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-item right">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3 class="timeline-year">{{ 'timeline.astroasis.year' | translate }}</h3>
-        <div class="timeline-card content-card">
-          <h4 class="timeline-title-item">{{ 'timeline.astroasis.title' | translate }}</h4>
-          <p class="timeline-text">
-            {{ 'timeline.astroasis.text' | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3 class="timeline-year">{{ 'timeline.greenEagle.year' | translate }}</h3>
-        <div class="timeline-card content-card">
-          <h4 class="timeline-title-item">{{ 'timeline.greenEagle.title' | translate }}</h4>
-          <p class="timeline-text">
-            {{ 'timeline.greenEagle.text' | translate }}
-          </p>
-        </div>
-      </div>
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-item right">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3 class="timeline-year">{{ 'timeline.simfor.year' | translate }}</h3>
-        <div class="timeline-card content-card">
-          <h4 class="timeline-title-item">{{ 'timeline.simfor.title' | translate }}</h4>
-          <p class="timeline-text">
-            {{ 'timeline.simfor.text' | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3 class="timeline-year">{{ 'timeline.udit.year' | translate }}</h3>
-        <div class="timeline-card content-card">
-          <h4 class="timeline-title-item">{{ 'timeline.udit.title' | translate }}</h4>
-          <p class="timeline-text">
-            {{ 'timeline.udit.text' | translate }}
-          </p>
-        </div>
-      </div>
-      <div class="timeline-dot"></div>
-    </div>
+    }
   </div>
 </section>
