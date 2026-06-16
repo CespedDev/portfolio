@@ -107,16 +107,20 @@
 }
 
 .work-card-more {
-  background: transparent;
-  border: 2px dashed var(--surface-border);
-  cursor: default;
+  background: linear-gradient(160deg, var(--p-surface-800) 0%, color-mix(in srgb, var(--p-primary-color) 15%, var(--p-surface-900)) 100%);
+  border: 1px solid color-mix(in srgb, var(--p-primary-color) 40%, transparent);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover {
-    border-color: var(--primary-color);
-    background: var(--surface-hover);
+    border-color: var(--p-primary-color);
+    background: linear-gradient(160deg, var(--p-surface-700) 0%, color-mix(in srgb, var(--p-primary-color) 25%, var(--p-surface-900)) 100%);
+
+    .more-arrow {
+      transform: translateX(6px);
+    }
   }
 
   .more-content {
@@ -126,22 +130,32 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
 
-    i {
-      font-size: 3rem;
-      opacity: 0.5;
-      color: var(--primary-color);
-    }
+  .more-icon {
+    font-size: 2.5rem;
+    color: var(--p-primary-color);
+    opacity: 0.85;
+  }
 
-    ::ng-deep .p-button {
-      font-size: 1.75rem;
-      font-weight: 600;
-    }
+  .more-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--p-primary-color);
+    font-family: 'Space Grotesk', sans-serif;
+  }
 
-    .more-description {
-      font-size: 0.875rem;
-      opacity: 0.6;
-      margin: 0;
-    }
+  .more-description {
+    font-size: 0.875rem;
+    color: var(--p-surface-0);
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  .more-arrow {
+    font-size: 1.25rem;
+    color: var(--p-primary-color);
+    transition: transform 0.25s ease;
+    margin-top: 0.5rem;
   }
 }

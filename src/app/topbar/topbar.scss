@@ -78,21 +78,21 @@
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
   .desktop-menu {
     display: none;
   }
-  
+
   .mobile-menu-button {
     display: flex;
   }
-  
+
   .topbar-content {
     justify-content: space-between;
     width: 100%;
     gap: 0.5rem;
   }
-  
+
   .topbar-title {
     font-size: 1.2rem;
     margin-right: 0;

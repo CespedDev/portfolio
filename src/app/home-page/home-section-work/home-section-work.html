@@ -24,15 +24,12 @@
       </div>
     }
 
-    <div class="work-card work-card-more">
+    <div class="work-card work-card-more" routerLink="/portfolio">
       <div class="more-content">
-        <p-button 
-          [label]="'work.andMore' | translate" 
-          [text]="true" 
-          size="large"
-          routerLink="/work" 
-        />
+        <i class="pi pi-th-large more-icon"></i>
+        <span class="more-label">{{ 'work.andMore' | translate }}</span>
         <p class="more-description">{{ 'work.viewAll' | translate }}</p>
+        <i class="pi pi-arrow-right more-arrow"></i>
       </div>
     </div>
   </div>
