@@ -1,25 +1,23 @@
 <section class="slide work-slide">
   <div class="work-header">
-    <h2>{{ 'work.title' | translate }}</h2>
-    <p class="work-subtitle">{{ 'work.subtitle' | translate }}</p>
+    <h2>{{ t.work.title[lang()] }}</h2>
+    <p class="work-subtitle">{{ t.work.subtitle[lang()] }}</p>
   </div>
 
   <div class="work-grid">
-    @for (work of works; track work.titleKey) {
-      <div class="work-card">
+    @for (project of works; track project.id) {
+      <div class="work-card" [routerLink]="['/portfolio', project.id]">
         <div class="work-image">
-          <img [src]="work.imageUrl" [alt]="work.titleKey | translate" />
+          <img [src]="project.image" [alt]="project.title[lang()]" />
         </div>
         <div class="work-content content-card">
-          <h3>{{ work.titleKey | translate }}</h3>
-          <p>{{ work.descriptionKey | translate }}</p>
-          @if (work.tagsKey) {
-            <div class="work-tags">
-              @for (tag of (work.tagsKey | translate); track tag) {
-                <span class="tag">{{ tag }}</span>
-              }
-            </div>
-          }
+          <h3>{{ project.title[lang()] }}</h3>
+          <p>{{ project.description[lang()] }}</p>
+          <div class="work-tags">
+            @for (tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
         </div>
       </div>
     }
@@ -27,8 +25,8 @@
     <div class="work-card work-card-more" routerLink="/portfolio">
       <div class="more-content">
         <i class="pi pi-th-large more-icon"></i>
-        <span class="more-label">{{ 'work.andMore' | translate }}</span>
-        <p class="more-description">{{ 'work.viewAll' | translate }}</p>
+        <span class="more-label">{{ t.work.andMore[lang()] }}</span>
+        <p class="more-description">{{ t.work.viewAll[lang()] }}</p>
         <i class="pi pi-arrow-right more-arrow"></i>
       </div>
     </div>

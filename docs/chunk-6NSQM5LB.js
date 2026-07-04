@@ -1,0 +1,1 @@
+var i="carloscf.correo@gmail.com",e=[{icon:"pi pi-github",url:"https://github.com/CespedDev",label:"GitHub"},{icon:"pi pi-box",url:"https://cespeddev.itch.io",label:"Itch.io"},{icon:"pi pi-linkedin",url:"https://www.linkedin.com/in/cespeddev/",label:"LinkedIn"},{icon:"pi pi-envelope",url:`mailto:${i}`,label:"Email"}];export{i as a,e as b};

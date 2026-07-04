@@ -1,3 +1,53 @@
-<section class="slide contact-slide">
-  <h1>{{ 'nav.contact' | translate }}</h1>
+<section class="contact-page">
+  <header class="page-header">
+    <h1>{{ t.contact.title[lang()] }}</h1>
+    <p class="page-subtitle">{{ t.contact.subtitle[lang()] }}</p>
+  </header>
+
+  <div class="contact-layout">
+    <form class="contact-form content-card" #form="ngForm" (ngSubmit)="submit(form)">
+      <div class="form-field">
+        <label for="name">{{ t.contact.name[lang()] }}</label>
+        <input pInputText id="name" name="name" ngModel required autocomplete="name" />
+      </div>
+
+      <div class="form-field">
+        <label for="email">{{ t.contact.email[lang()] }}</label>
+        <input pInputText id="email" name="email" type="email" ngModel required email autocomplete="email" />
+      </div>
+
+      <div class="form-field">
+        <label for="message">{{ t.contact.message[lang()] }}</label>
+        <textarea pTextarea id="message" name="message" ngModel required rows="6"></textarea>
+      </div>
+
+      <p-button
+        type="submit"
+        icon="pi pi-send"
+        [label]="(status() === 'sending' ? t.contact.sending : t.contact.send)[lang()]"
+        [disabled]="form.invalid || status() === 'sending'" />
+
+      @if (status() === 'sent') {
+        <p-message severity="success" [text]="t.contact.sent[lang()]" />
+      } @else if (status() === 'error') {
+        <p-message severity="error" [text]="t.contact.error[lang()]" />
+      }
+    </form>
+
+    <aside class="contact-direct">
+      <h2>{{ t.contact.direct[lang()] }}</h2>
+      <div class="direct-links">
+        @for (link of socialLinks; track link.url) {
+          <a
+            pButton
+            [label]="link.label"
+            [icon]="link.icon"
+            [outlined]="true"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener"></a>
+        }
+      </div>
+    </aside>
+  </div>
 </section>

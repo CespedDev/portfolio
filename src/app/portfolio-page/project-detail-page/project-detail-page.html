@@ -3,7 +3,7 @@
     <a
       pButton
       class="back-button"
-      [label]="'portfolio.back' | translate"
+      [label]="t.portfolio.back[lang()]"
       icon="pi pi-arrow-left"
       [text]="true"
       [routerLink]="['/portfolio']"></a>
@@ -54,9 +54,9 @@
     }
   } @else {
     <div class="detail-not-found">
-      <p>{{ 'portfolio.notFound' | translate }}</p>
+      <p>{{ t.portfolio.notFound[lang()] }}</p>
       <p-button
-        [label]="'portfolio.back' | translate"
+        [label]="t.portfolio.back[lang()]"
         icon="pi pi-arrow-left"
         [routerLink]="['/portfolio']" />
     </div>

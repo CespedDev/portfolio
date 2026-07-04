@@ -1,9 +1,6 @@
-export type ProjectCategory = 'professional' | 'personal';
+import { Localized } from '../shared/lang';
 
-export interface Localized {
-  en: string;
-  es: string;
-}
+export type ProjectCategory = 'professional' | 'personal';
 
 export interface ProjectLink {
   icon: string;   // clase de PrimeIcons, p. ej. 'pi pi-github'
@@ -14,6 +11,7 @@ export interface ProjectLink {
 export interface PortfolioProject {
   id: string;              // único, en kebab-case
   category: ProjectCategory;
+  featured?: boolean;      // opcional: se muestra en "Trabajos Destacados" de la home (máx. 3)
   year: string;            // texto libre: '2024' o '2024 — Present'
   image: string;           // ruta bajo assets/, p. ej. 'assets/images/mi-proyecto.png'
   tags: string[];          // tecnologías o etiquetas
@@ -70,6 +68,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'green-eagle',
     category: 'professional',
+    featured: true,
     year: '2024',
     image: 'assets/images/green-eagle.svg',
     tags: ['Serious Game', 'Simulation'],
@@ -82,6 +81,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'simfor',
     category: 'professional',
+    featured: true,
     year: '2022 — 2023',
     image: 'assets/images/simfor.svg',
     tags: ['Unity', 'C#', 'QA'],
@@ -100,6 +100,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'astroasis',
     category: 'personal',
+    featured: true,
     year: '2024 — Present',
     image: 'assets/images/astroasis.svg',
     tags: ['Unity', 'C#', 'VR'],

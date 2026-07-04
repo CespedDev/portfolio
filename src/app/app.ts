@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { Topbar } from './topbar/topbar';
 import { SocialButtonsComponent } from './social-buttons/social-buttons';
 import { Footer } from './footer/footer';
+import { injectLang } from './shared/lang';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,9 @@ import { Footer } from './footer/footer';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  private readonly translate = inject(TranslateService);
   private readonly doc = inject(DOCUMENT);
 
   constructor() {
-    const savedLang = localStorage.getItem('lang') || 'en';
-    this.translate.use(savedLang);
-    this.doc.documentElement.lang = savedLang;
+    this.doc.documentElement.lang = injectLang()();
   }
 }

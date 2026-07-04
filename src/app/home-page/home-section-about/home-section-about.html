@@ -1,21 +1,21 @@
 <section class="slide about-slide">
   <div class="about-left">
-    <h2>{{ 'about.title' | translate }}</h2>
+    <h2>{{ t.about.title[lang()] }}</h2>
     <p class="about-text">
-      {{ 'about.text' | translate }}
+      {{ t.about.text[lang()] }}
     </p>
     <div class="about-buttons">
-      <p-button [label]="'about.contactMe' | translate" icon="pi pi-envelope" routerLink="/contact" />
+      <p-button [label]="t.about.contactMe[lang()]" icon="pi pi-envelope" routerLink="/contact" />
       <a
         pButton
-        [label]="'about.downloadCV' | translate"
+        [label]="t.about.downloadCV[lang()]"
         icon="pi pi-download"
         [outlined]="true"
         href="assets/docs/CV_Carlos_Cabrera.pdf"
         download></a>
     </div>
   </div>
-  
+
   <div class="about-right">
     <div class="photo-container">
       <!-- <img src="/placeholder-photo.jpg" alt="Carlos Cabrera" /> -->

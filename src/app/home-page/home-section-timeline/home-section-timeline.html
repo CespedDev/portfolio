@@ -1,27 +1,27 @@
 <section class="slide timeline-slide">
-  <h2 class="timeline-title">{{ 'timeline.title' | translate }}</h2>
+  <h2 class="timeline-title">{{ t.timeline.title[lang()] }}</h2>
 
   <div class="timeline-container">
     <div class="timeline-line"></div>
 
-    @for (item of timelineItems; track item.key) {
+    @for (item of timelineItems; track item.title) {
       <div [class]="'timeline-item ' + item.side">
         @if (item.side === 'left') {
           <div class="timeline-content">
-            <h3 class="timeline-year">{{ 'timeline.' + item.key + '.year' | translate }}</h3>
+            <h3 class="timeline-year">{{ item.year[lang()] }}</h3>
             <div class="timeline-card content-card">
-              <h4 class="timeline-title-item">{{ 'timeline.' + item.key + '.title' | translate }}</h4>
-              <p class="timeline-text">{{ 'timeline.' + item.key + '.text' | translate }}</p>
+              <h4 class="timeline-title-item">{{ item.title }}</h4>
+              <p class="timeline-text">{{ item.text[lang()] }}</p>
             </div>
           </div>
           <div class="timeline-dot"></div>
         } @else {
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="timeline-year">{{ 'timeline.' + item.key + '.year' | translate }}</h3>
+            <h3 class="timeline-year">{{ item.year[lang()] }}</h3>
             <div class="timeline-card content-card">
-              <h4 class="timeline-title-item">{{ 'timeline.' + item.key + '.title' | translate }}</h4>
-              <p class="timeline-text">{{ 'timeline.' + item.key + '.text' | translate }}</p>
+              <h4 class="timeline-title-item">{{ item.title }}</h4>
+              <p class="timeline-text">{{ item.text[lang()] }}</p>
             </div>
           </div>
         }

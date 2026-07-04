@@ -1,32 +1,27 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { map } from 'rxjs';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ButtonModule } from 'primeng/button';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { injectLang } from '../shared/lang';
+import { UI } from '../shared/ui-texts';
 import { PORTFOLIO_PROJECTS, ProjectCategory } from './portfolio-projects';
 
 @Component({
   selector: 'app-portfolio-page',
   standalone: true,
-  imports: [FormsModule, RouterLink, SelectButtonModule, ButtonModule, TranslatePipe],
+  imports: [FormsModule, RouterLink, SelectButtonModule, ButtonModule],
   templateUrl: './portfolio-page.html',
   styleUrl: './portfolio-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioPage {
-  private readonly translate = inject(TranslateService);
-
-  readonly lang = toSignal(
-    this.translate.onLangChange.pipe(map(event => event.lang as 'en' | 'es')),
-    { initialValue: (this.translate.currentLang as 'en' | 'es') || 'en' },
-  );
+  readonly t = UI;
+  readonly lang = injectLang();
 
   readonly categoryOptions = [
-    { labelKey: 'portfolio.categories.professional', value: 'professional' as ProjectCategory },
-    { labelKey: 'portfolio.categories.personal',     value: 'personal' as ProjectCategory     },
+    { label: UI.portfolio.professional, value: 'professional' as ProjectCategory },
+    { label: UI.portfolio.personal,     value: 'personal' as ProjectCategory     },
   ];
 
   readonly category = signal<ProjectCategory>('professional');

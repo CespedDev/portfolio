@@ -3,25 +3,23 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
 import { ButtonModule } from 'primeng/button';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { injectLang } from '../../shared/lang';
+import { UI } from '../../shared/ui-texts';
 import { PORTFOLIO_PROJECTS } from '../portfolio-projects';
 
 @Component({
   selector: 'app-project-detail-page',
   standalone: true,
-  imports: [RouterLink, ButtonModule, TranslatePipe],
+  imports: [RouterLink, ButtonModule],
   templateUrl: './project-detail-page.html',
   styleUrl: './project-detail-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectDetailPage {
   private readonly route = inject(ActivatedRoute);
-  private readonly translate = inject(TranslateService);
 
-  readonly lang = toSignal(
-    this.translate.onLangChange.pipe(map(event => event.lang as 'en' | 'es')),
-    { initialValue: (this.translate.currentLang as 'en' | 'es') || 'en' },
-  );
+  readonly t = UI;
+  readonly lang = injectLang();
 
   private readonly id = toSignal(
     this.route.paramMap.pipe(map(params => params.get('id'))),

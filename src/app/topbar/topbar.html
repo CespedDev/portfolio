@@ -5,14 +5,14 @@
 
       <!-- Desktop Menu -->
       <div class="desktop-menu">
-        <p-button [label]="'nav.home' | translate" icon="pi pi-home" [routerLink]="['/home']" routerLinkActive="active-nav" text />
-        <p-button [label]="'nav.portfolio' | translate" icon="pi pi-briefcase" [routerLink]="['/portfolio']" routerLinkActive="active-nav" text />
-        <p-button [label]="'nav.hobbies' | translate" icon="pi pi-heart" [routerLink]="['/hobbies']" routerLinkActive="active-nav" text />
-        <p-button [label]="'nav.bio' | translate" icon="pi pi-user" [routerLink]="['/bio']" routerLinkActive="active-nav" text />
-        <p-button [label]="'nav.contact' | translate" icon="pi pi-envelope" [routerLink]="['/contact']" routerLinkActive="active-nav" text />
+        <p-button [label]="t.nav.home[lang()]" icon="pi pi-home" [routerLink]="['/home']" routerLinkActive="active-nav" text />
+        <p-button [label]="t.nav.portfolio[lang()]" icon="pi pi-briefcase" [routerLink]="['/portfolio']" routerLinkActive="active-nav" text />
+        <p-button [label]="t.nav.hobbies[lang()]" icon="pi pi-heart" [routerLink]="['/hobbies']" routerLinkActive="active-nav" text />
+        <p-button [label]="t.nav.bio[lang()]" icon="pi pi-user" [routerLink]="['/bio']" routerLinkActive="active-nav" text />
+        <p-button [label]="t.nav.contact[lang()]" icon="pi pi-envelope" [routerLink]="['/contact']" routerLinkActive="active-nav" text />
         <a
           pButton
-          [label]="'nav.downloadCV' | translate"
+          [label]="t.nav.downloadCV[lang()]"
           icon="pi pi-download"
           [outlined]="true"
           href="assets/docs/CV_Carlos_Cabrera.pdf"
@@ -47,7 +47,7 @@
 
   <div class="mobile-menu-items">
     <p-button
-      [label]="'nav.home' | translate"
+      [label]="t.nav.home[lang()]"
       icon="pi pi-home"
       [routerLink]="['/home']"
       routerLinkActive="active-nav"
@@ -56,7 +56,7 @@
       styleClass="mobile-menu-item"
     />
     <p-button
-      [label]="'nav.portfolio' | translate"
+      [label]="t.nav.portfolio[lang()]"
       icon="pi pi-briefcase"
       [routerLink]="['/portfolio']"
       routerLinkActive="active-nav"
@@ -65,7 +65,7 @@
       styleClass="mobile-menu-item"
     />
     <p-button
-      [label]="'nav.hobbies' | translate"
+      [label]="t.nav.hobbies[lang()]"
       icon="pi pi-heart"
       [routerLink]="['/hobbies']"
       routerLinkActive="active-nav"
@@ -74,7 +74,7 @@
       styleClass="mobile-menu-item"
     />
     <p-button
-      [label]="'nav.bio' | translate"
+      [label]="t.nav.bio[lang()]"
       icon="pi pi-user"
       [routerLink]="['/bio']"
       routerLinkActive="active-nav"
@@ -83,7 +83,7 @@
       styleClass="mobile-menu-item"
     />
     <p-button
-      [label]="'nav.contact' | translate"
+      [label]="t.nav.contact[lang()]"
       icon="pi pi-envelope"
       [routerLink]="['/contact']"
       routerLinkActive="active-nav"
@@ -93,7 +93,7 @@
     />
     <a
       pButton
-      [label]="'nav.downloadCV' | translate"
+      [label]="t.nav.downloadCV[lang()]"
       icon="pi pi-download"
       [outlined]="true"
       class="mobile-menu-item"

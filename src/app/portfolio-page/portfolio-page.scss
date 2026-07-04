@@ -31,6 +31,7 @@
   flex-direction: column;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -42,9 +43,11 @@
 .project-image {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--p-surface-200);
+  /* Fondo oscuro: si asoma algún subpíxel bajo la imagen, no se ve blanco */
+  background: var(--p-surface-800);
 
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;

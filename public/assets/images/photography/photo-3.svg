@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12332a"/>
+      <stop offset="55%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sea)"/>
+  <circle cx="400" cy="300" r="80" fill="#34d399" opacity="0.35"/>
+  <circle cx="400" cy="300" r="55" fill="#34d399" opacity="0.5"/>
+  <line x1="0" y1="330" x2="800" y2="330" stroke="#10b981" stroke-width="2" opacity="0.7"/>
+  <!-- reflejo -->
+  <g stroke="#34d399" opacity="0.4">
+    <line x1="360" y1="360" x2="440" y2="360" stroke-width="5"/>
+    <line x1="370" y1="395" x2="430" y2="395" stroke-width="4"/>
+    <line x1="355" y1="430" x2="445" y2="430" stroke-width="4"/>
+    <line x1="380" y1="465" x2="420" y2="465" stroke-width="3"/>
+    <line x1="365" y1="500" x2="435" y2="500" stroke-width="2"/>
+  </g>
+  <path d="M0 340 Q100 335 200 342 T400 338 T600 344 T800 337" fill="none" stroke="#FBFBFF" stroke-width="1.5" opacity="0.3"/>
+  <text x="400" y="575" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#34d399" letter-spacing="3" opacity="0.7">PLACEHOLDER — YOUR PHOTO HERE</text>
+</svg>

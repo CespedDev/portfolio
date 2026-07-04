@@ -124,6 +124,11 @@ h6 {
   padding: 0 !important;
 }
 
+/* Los enlaces <a pButton> no deben llevar el subrayado por defecto del navegador */
+a.p-button {
+  text-decoration: none;
+}
+
 /* Resaltado de ruta activa en la navegación (topbar y drawer móvil) */
 .active-nav .p-button {
   background: color-mix(in srgb, var(--p-primary-color) 14%, transparent);
@@ -144,6 +149,22 @@ h6 {
   background: var(--p-surface-0);
   color: var(--p-surface-900);
   border-radius: 0.5rem;
+}
+
+/* Encabezado estándar de página (portfolio, hobbies, bio...) */
+.page-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+
+  h1 {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.8;
+    margin: 0;
+  }
 }
 
 /* Etiquetas de tecnología (tarjetas de proyecto en home y portfolio) */

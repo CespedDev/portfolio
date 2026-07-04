@@ -1,3 +1,35 @@
-<section class="slide hobbies-slide">
-  <h1>{{ 'nav.hobbies' | translate }}</h1>
+<section class="hobbies-page">
+  <header class="page-header">
+    <h1>{{ t.hobbies.title[lang()] }}</h1>
+    <p class="page-subtitle">{{ t.hobbies.subtitle[lang()] }}</p>
+  </header>
+
+  <section class="hobby-block">
+    <h2 class="hobby-title"><i class="pi pi-play"></i> {{ t.hobbies.gamingTitle[lang()] }}</h2>
+    <div class="hobby-card content-card">
+      @for (paragraph of gamingParagraphs(); track $index) {
+        <p>{{ paragraph }}</p>
+      }
+      <h3 class="favorites-title">{{ t.hobbies.favorites[lang()] }}</h3>
+      <div class="favorites">
+        @for (game of favoriteGames; track game) {
+          <span class="tag">{{ game }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="hobby-block">
+    <h2 class="hobby-title"><i class="pi pi-camera"></i> {{ t.hobbies.photographyTitle[lang()] }}</h2>
+    <div class="hobby-card content-card">
+      @for (paragraph of photographyParagraphs(); track $index) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+    <div class="photo-grid">
+      @for (photo of photos; track photo) {
+        <p-image [src]="photo" [alt]="t.hobbies.photographyTitle[lang()]" [preview]="true" />
+      }
+    </div>
+  </section>
 </section>

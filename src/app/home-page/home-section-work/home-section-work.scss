@@ -40,12 +40,12 @@
 }
 
 .work-card {
-  background: var(--p-surface-0);
+  display: flex;
+  flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  border: 1px solid var(--p-surface-200);
 
   &:hover:not(.work-card-more) {
     transform: translateY(-8px);
@@ -56,9 +56,11 @@
     width: 100%;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    background: var(--p-surface-200);
-    
+    /* Fondo oscuro: si asoma algún subpíxel bajo la imagen, no se ve claro */
+    background: var(--p-surface-800);
+
     img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -71,6 +73,7 @@
   }
 
   .work-content {
+    flex: 1;
     padding: 1.5rem;
 
     h3 {

@@ -1,7 +1,7 @@
 <section class="portfolio-page">
-  <header class="portfolio-header">
-    <h1>{{ 'portfolio.title' | translate }}</h1>
-    <p class="portfolio-subtitle">{{ 'portfolio.subtitle' | translate }}</p>
+  <header class="page-header">
+    <h1>{{ t.portfolio.title[lang()] }}</h1>
+    <p class="page-subtitle">{{ t.portfolio.subtitle[lang()] }}</p>
 
     <p-selectbutton
       [options]="categoryOptions"
@@ -10,18 +10,18 @@
       [ngModel]="category()"
       (ngModelChange)="category.set($event)">
       <ng-template #item let-option>
-        {{ option.labelKey | translate }}
+        {{ option.label[lang()] }}
       </ng-template>
     </p-selectbutton>
   </header>
 
   <div class="projects-grid">
     @for (project of projects(); track project.id) {
-      <article class="project-card content-card" [routerLink]="['/portfolio', project.id]">
+      <article class="project-card" [routerLink]="['/portfolio', project.id]">
         <div class="project-image">
           <img [src]="project.image" [alt]="project.title[lang()]" loading="lazy" />
         </div>
-        <div class="project-content">
+        <div class="project-content content-card">
           <span class="project-year">{{ project.year }}</span>
           <h2 class="project-title">
             <a [routerLink]="['/portfolio', project.id]">{{ project.title[lang()] }}</a>
@@ -51,7 +51,7 @@
         </div>
       </article>
     } @empty {
-      <p class="portfolio-empty">{{ 'portfolio.empty' | translate }}</p>
+      <p class="portfolio-empty">{{ t.portfolio.empty[lang()] }}</p>
     }
   </div>
 </section>

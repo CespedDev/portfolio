@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#12332a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="600" cy="140" r="55" fill="none" stroke="#34d399" stroke-width="3" opacity="0.8"/>
+  <path d="M0 470 L220 260 L400 430 L540 320 L800 500 V600 H0 Z" fill="#10b981" opacity="0.25"/>
+  <path d="M0 520 L180 380 L360 500 L560 400 L800 540 V600 H0 Z" fill="#10b981" opacity="0.4"/>
+  <g fill="#FBFBFF" opacity="0.6">
+    <circle cx="120" cy="100" r="2"/><circle cx="300" cy="70" r="1.5"/><circle cx="450" cy="120" r="2"/>
+    <circle cx="700" cy="60" r="1.5"/><circle cx="200" cy="180" r="1.5"/>
+  </g>
+  <text x="400" y="575" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#34d399" letter-spacing="3" opacity="0.7">PLACEHOLDER — YOUR PHOTO HERE</text>
+</svg>
