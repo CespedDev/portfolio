@@ -16,7 +16,9 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Carlos Cabrera",
-    "title": "Programador de Videojuegos y FullStack"
+    "title": "Programador de Videojuegos y FullStack",
+    "viewWork": "Ver mi trabajo",
+    "scrollDown": "Bajar"
   },
   "about": {
     "title": "Sobre Mí",
@@ -52,26 +54,37 @@
       "text": "Grado en Diseño y Desarrollo de Videojuegos. Matrícula de honor en Fundamentos de Programación y Programación II. Ganador del festival de cortometrajes Feelmotion XI en 2022."
     }
   },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Trabajo profesional y proyectos propios",
+    "categories": {
+      "professional": "Trabajo Profesional",
+      "personal": "Proyectos Propios"
+    },
+    "empty": "Más proyectos próximamente.",
+    "back": "Volver al portfolio",
+    "notFound": "Proyecto no encontrado."
+  },
   "work": {
     "title": "Trabajos Destacados",
     "subtitle": "Algunos de mis proyectos y experiencias recientes",
     "andMore": "Y Más",
     "viewAll": "Ver todo mi trabajo y experiencias",
     "projects": {
-      "project1": {
-        "title": "Proyecto Uno",
-        "description": "Descripción de tu primer proyecto o experiencia laboral",
-        "tags": ["Angular", "TypeScript"]
+      "astroasis": {
+        "title": "AstrOasis",
+        "description": "VR rhythm shooter seleccionado para PlayStation Talents. Director y programador principal del proyecto.",
+        "tags": ["Unity", "C#", "VR"]
       },
-      "project2": {
-        "title": "Proyecto Dos",
-        "description": "Descripción de tu segundo proyecto o experiencia laboral",
-        "tags": ["Desarrollo Web"]
+      "simfor": {
+        "title": "SIMFOR",
+        "description": "Simulador de operaciones aeroportuarias. Menús de configuración dinámica, sistema de sonido desde cero y sistema de tráfico.",
+        "tags": ["Unity", "C#", "QA"]
       },
-      "project3": {
-        "title": "Proyecto Tres",
-        "description": "Descripción de tu tercer proyecto o experiencia laboral",
-        "tags": ["Full Stack"]
+      "greenEagle": {
+        "title": "Green Eagle Solutions",
+        "description": "Serious game de simulación de control de parques eólicos, adaptado a los requisitos del cliente. Diseño, arte y programación.",
+        "tags": ["Serious Game", "Simulación"]
       }
     }
   }

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -11,4 +12,9 @@ import { TranslatePipe } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeSectionHeroComponent {
+  private readonly doc = inject(DOCUMENT);
+
+  scrollTo(selector: string): void {
+    this.doc.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

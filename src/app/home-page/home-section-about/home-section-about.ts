@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-section-about',
-  imports: [ButtonModule, TranslatePipe],
+  imports: [RouterLink, ButtonModule, TranslatePipe],
   templateUrl: './home-section-about.html',
   styleUrls: ['./home-section-about.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

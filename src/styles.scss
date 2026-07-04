@@ -124,6 +124,11 @@ h6 {
   padding: 0 !important;
 }
 
+/* Resaltado de ruta activa en la navegación (topbar y drawer móvil) */
+.active-nav .p-button {
+  background: color-mix(in srgb, var(--p-primary-color) 14%, transparent);
+}
+
 /* Global Layout Patterns */
 .slide {
   min-height: calc(100vh - var(--navbar-height));
@@ -131,6 +136,7 @@ h6 {
   align-items: center;
   justify-content: center;
   position: relative;
+  scroll-margin-top: var(--navbar-height);
 }
 
 /* Content Cards - Consistent styling for content blocks */
@@ -138,6 +144,16 @@ h6 {
   background: var(--p-surface-0);
   color: var(--p-surface-900);
   border-radius: 0.5rem;
+}
+
+/* Etiquetas de tecnología (tarjetas de proyecto en home y portfolio) */
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--p-primary-color);
+  color: var(--p-primary-contrast-color);
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 /* Section Titles */

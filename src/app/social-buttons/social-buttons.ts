@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
+import { SOCIAL_LINKS } from '../shared/social-links';
 
 @Component({
   selector: 'app-social-buttons',
@@ -10,4 +11,5 @@ import { ButtonModule } from 'primeng/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SocialButtonsComponent {
+  readonly socialLinks = SOCIAL_LINKS;
 }

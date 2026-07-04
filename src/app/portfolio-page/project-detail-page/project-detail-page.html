@@ -1,0 +1,64 @@
+<section class="project-detail">
+  @if (project(); as project) {
+    <a
+      pButton
+      class="back-button"
+      [label]="'portfolio.back' | translate"
+      icon="pi pi-arrow-left"
+      [text]="true"
+      [routerLink]="['/portfolio']"></a>
+
+    <header class="detail-header">
+      <span class="detail-year">{{ project.year }}</span>
+      <h1>{{ project.title[lang()] }}</h1>
+      <div class="detail-meta">
+        <div class="detail-tags">
+          @for (tag of project.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+        @if (project.links?.length) {
+          <div class="detail-links">
+            @for (link of project.links; track link.url) {
+              <a
+                pButton
+                [label]="link.label"
+                [icon]="link.icon"
+                [outlined]="true"
+                size="small"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener"></a>
+            }
+          </div>
+        }
+      </div>
+    </header>
+
+    <div class="detail-image">
+      <img [src]="project.image" [alt]="project.title[lang()]" />
+    </div>
+
+    <div class="detail-content content-card">
+      @for (paragraph of paragraphs(); track $index) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+
+    @if (project.gallery?.length) {
+      <div class="detail-gallery">
+        @for (image of project.gallery; track image) {
+          <img [src]="image" [alt]="project.title[lang()]" loading="lazy" />
+        }
+      </div>
+    }
+  } @else {
+    <div class="detail-not-found">
+      <p>{{ 'portfolio.notFound' | translate }}</p>
+      <p-button
+        [label]="'portfolio.back' | translate"
+        icon="pi pi-arrow-left"
+        [routerLink]="['/portfolio']" />
+    </div>
+  }
+</section>

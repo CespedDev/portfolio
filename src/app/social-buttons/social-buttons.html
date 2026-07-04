@@ -1,6 +1,13 @@
 <div class="social-buttons">
-  <p-button icon="pi pi-github" text [rounded]="true" />
-  <p-button icon="pi pi-box" text [rounded]="true" />
-  <p-button icon="pi pi-linkedin" text [rounded]="true" />
-  <p-button icon="pi pi-envelope" text [rounded]="true" />
+  @for (link of socialLinks; track link.url) {
+    <a
+      pButton
+      [icon]="link.icon"
+      [text]="true"
+      [rounded]="true"
+      [href]="link.url"
+      [attr.aria-label]="link.label"
+      target="_blank"
+      rel="noopener"></a>
+  }
 </div>

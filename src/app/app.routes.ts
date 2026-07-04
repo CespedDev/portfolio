@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadComponent: () => import('./portfolio-page/portfolio-page').then(m => m.PortfolioPage)
   },
   {
+    path: 'portfolio/:id',
+    loadComponent: () => import('./portfolio-page/project-detail-page/project-detail-page').then(m => m.ProjectDetailPage)
+  },
+  {
     path: 'bio',
     loadComponent: () => import('./bio-page/bio-page').then(m => m.BioPage)
   },

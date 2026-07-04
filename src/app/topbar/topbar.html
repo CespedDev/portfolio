@@ -2,32 +2,38 @@
   <ng-template #center>
     <div class="topbar-content">
       <span class="topbar-title">Carlos Cabrera</span>
-      
+
       <!-- Desktop Menu -->
       <div class="desktop-menu">
-        <p-button [label]="'nav.home' | translate" icon="pi pi-home" [routerLink]="['/home']" text />
-        <p-button [label]="'nav.portfolio' | translate" icon="pi pi-briefcase" [routerLink]="['/portfolio']" text />
-        <p-button [label]="'nav.hobbies' | translate" icon="pi pi-heart" [routerLink]="['/hobbies']" text />
-        <p-button [label]="'nav.bio' | translate" icon="pi pi-user" [routerLink]="['/bio']" text />
-        <p-button [label]="'nav.contact' | translate" icon="pi pi-envelope" [routerLink]="['/contact']" text />
-        <p-button [label]="'nav.downloadCV' | translate" icon="pi pi-download" outlined />
-        
+        <p-button [label]="'nav.home' | translate" icon="pi pi-home" [routerLink]="['/home']" routerLinkActive="active-nav" text />
+        <p-button [label]="'nav.portfolio' | translate" icon="pi pi-briefcase" [routerLink]="['/portfolio']" routerLinkActive="active-nav" text />
+        <p-button [label]="'nav.hobbies' | translate" icon="pi pi-heart" [routerLink]="['/hobbies']" routerLinkActive="active-nav" text />
+        <p-button [label]="'nav.bio' | translate" icon="pi pi-user" [routerLink]="['/bio']" routerLinkActive="active-nav" text />
+        <p-button [label]="'nav.contact' | translate" icon="pi pi-envelope" [routerLink]="['/contact']" routerLinkActive="active-nav" text />
+        <a
+          pButton
+          [label]="'nav.downloadCV' | translate"
+          icon="pi pi-download"
+          [outlined]="true"
+          href="assets/docs/CV_Carlos_Cabrera.pdf"
+          download></a>
+
         <!-- Language Switcher -->
-        <p-button 
-          [label]="languageLabel()" 
-          icon="pi pi-globe" 
-          (onClick)="switchLanguage()" 
-          text 
+        <p-button
+          [label]="languageLabel()"
+          icon="pi pi-globe"
+          (onClick)="switchLanguage()"
+          text
           styleClass="language-button"
         />
       </div>
-      
+
       <!-- Mobile Hamburger -->
-      <p-button 
-        class="mobile-menu-button" 
-        icon="pi pi-bars" 
-        (onClick)="mobileMenuVisible.set(true)" 
-        text 
+      <p-button
+        class="mobile-menu-button"
+        icon="pi pi-bars"
+        (onClick)="mobileMenuVisible.set(true)"
+        text
       />
     </div>
   </ng-template>
@@ -38,62 +44,69 @@
   <ng-template #header>
     <span class="drawer-title">Menu</span>
   </ng-template>
-  
+
   <div class="mobile-menu-items">
-    <p-button 
-      [label]="'nav.home' | translate" 
-      icon="pi pi-home" 
-      [routerLink]="['/home']" 
+    <p-button
+      [label]="'nav.home' | translate"
+      icon="pi pi-home"
+      [routerLink]="['/home']"
+      routerLinkActive="active-nav"
       (onClick)="mobileMenuVisible.set(false)"
-      text 
+      text
       styleClass="mobile-menu-item"
     />
-    <p-button 
-      [label]="'nav.portfolio' | translate" 
-      icon="pi pi-briefcase" 
+    <p-button
+      [label]="'nav.portfolio' | translate"
+      icon="pi pi-briefcase"
       [routerLink]="['/portfolio']"
+      routerLinkActive="active-nav"
       (onClick)="mobileMenuVisible.set(false)"
-      text 
+      text
       styleClass="mobile-menu-item"
     />
-    <p-button 
-      [label]="'nav.hobbies' | translate" 
-      icon="pi pi-heart" 
+    <p-button
+      [label]="'nav.hobbies' | translate"
+      icon="pi pi-heart"
       [routerLink]="['/hobbies']"
+      routerLinkActive="active-nav"
       (onClick)="mobileMenuVisible.set(false)"
-      text 
+      text
       styleClass="mobile-menu-item"
     />
-    <p-button 
-      [label]="'nav.bio' | translate" 
-      icon="pi pi-user" 
+    <p-button
+      [label]="'nav.bio' | translate"
+      icon="pi pi-user"
       [routerLink]="['/bio']"
+      routerLinkActive="active-nav"
       (onClick)="mobileMenuVisible.set(false)"
-      text 
+      text
       styleClass="mobile-menu-item"
     />
-    <p-button 
-      [label]="'nav.contact' | translate" 
-      icon="pi pi-envelope" 
+    <p-button
+      [label]="'nav.contact' | translate"
+      icon="pi pi-envelope"
       [routerLink]="['/contact']"
+      routerLinkActive="active-nav"
       (onClick)="mobileMenuVisible.set(false)"
-      text 
+      text
       styleClass="mobile-menu-item"
     />
-    <p-button 
-      [label]="'nav.downloadCV' | translate" 
-      icon="pi pi-download" 
-      (onClick)="mobileMenuVisible.set(false)"
-      outlined 
-      styleClass="mobile-menu-item"
-    />
-    
+    <a
+      pButton
+      [label]="'nav.downloadCV' | translate"
+      icon="pi pi-download"
+      [outlined]="true"
+      class="mobile-menu-item"
+      href="assets/docs/CV_Carlos_Cabrera.pdf"
+      download
+      (click)="mobileMenuVisible.set(false)"></a>
+
     <!-- Language Switcher Mobile -->
-    <p-button 
-      [label]="languageLabel()" 
-      icon="pi pi-globe" 
-      (onClick)="switchLanguage()" 
-      text 
+    <p-button
+      [label]="languageLabel()"
+      icon="pi pi-globe"
+      (onClick)="switchLanguage()"
+      text
       styleClass="mobile-menu-item language-button"
     />
   </div>

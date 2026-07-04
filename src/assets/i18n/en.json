@@ -16,7 +16,9 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Carlos Cabrera",
-    "title": "Videogame & FullStack Programmer"
+    "title": "Videogame & FullStack Programmer",
+    "viewWork": "View my work",
+    "scrollDown": "Scroll down"
   },
   "about": {
     "title": "About Me",
@@ -52,26 +54,37 @@
       "text": "Bachelor's Degree in Video Game Design and Development. Honors in Fundamentals of Programming and Programming II. Winner at the Feelmotion XI short film festival in 2022."
     }
   },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Professional work and personal projects",
+    "categories": {
+      "professional": "Professional Work",
+      "personal": "Personal Projects"
+    },
+    "empty": "More projects coming soon.",
+    "back": "Back to portfolio",
+    "notFound": "Project not found."
+  },
   "work": {
     "title": "Featured Work",
     "subtitle": "Some of my recent projects and experiences",
     "andMore": "And More",
     "viewAll": "View all my work and experiences",
     "projects": {
-      "project1": {
-        "title": "Project One",
-        "description": "Description of your first project or work experience",
-        "tags": ["Angular", "TypeScript"]
+      "astroasis": {
+        "title": "AstrOasis",
+        "description": "VR rhythm shooter selected for PlayStation Talents. Director and lead programmer of the project.",
+        "tags": ["Unity", "C#", "VR"]
       },
-      "project2": {
-        "title": "Project Two",
-        "description": "Description of your second project or work experience",
-        "tags": ["Web Development"]
+      "simfor": {
+        "title": "SIMFOR",
+        "description": "Airport operations simulator. Dynamic configuration menus, a sound system built from scratch and the traffic system.",
+        "tags": ["Unity", "C#", "QA"]
       },
-      "project3": {
-        "title": "Project Three",
-        "description": "Description of your third project or work experience",
-        "tags": ["Full Stack"]
+      "greenEagle": {
+        "title": "Green Eagle Solutions",
+        "description": "Serious game for wind farm control simulation, adapted to the client's requirements. Design, art and programming.",
+        "tags": ["Serious Game", "Simulation"]
       }
     }
   }

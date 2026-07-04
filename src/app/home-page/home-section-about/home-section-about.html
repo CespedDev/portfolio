@@ -5,8 +5,14 @@
       {{ 'about.text' | translate }}
     </p>
     <div class="about-buttons">
-      <p-button [label]="'about.contactMe' | translate" icon="pi pi-envelope" />
-      <p-button [label]="'about.downloadCV' | translate" icon="pi pi-download" outlined />
+      <p-button [label]="'about.contactMe' | translate" icon="pi pi-envelope" routerLink="/contact" />
+      <a
+        pButton
+        [label]="'about.downloadCV' | translate"
+        icon="pi pi-download"
+        [outlined]="true"
+        href="assets/docs/CV_Carlos_Cabrera.pdf"
+        download></a>
     </div>
   </div>
   

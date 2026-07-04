@@ -1,3 +1,57 @@
-<section class="slide portfolio-slide">
-  <h1>{{ 'nav.portfolio' | translate }}</h1>
+<section class="portfolio-page">
+  <header class="portfolio-header">
+    <h1>{{ 'portfolio.title' | translate }}</h1>
+    <p class="portfolio-subtitle">{{ 'portfolio.subtitle' | translate }}</p>
+
+    <p-selectbutton
+      [options]="categoryOptions"
+      optionValue="value"
+      [allowEmpty]="false"
+      [ngModel]="category()"
+      (ngModelChange)="category.set($event)">
+      <ng-template #item let-option>
+        {{ option.labelKey | translate }}
+      </ng-template>
+    </p-selectbutton>
+  </header>
+
+  <div class="projects-grid">
+    @for (project of projects(); track project.id) {
+      <article class="project-card content-card" [routerLink]="['/portfolio', project.id]">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title[lang()]" loading="lazy" />
+        </div>
+        <div class="project-content">
+          <span class="project-year">{{ project.year }}</span>
+          <h2 class="project-title">
+            <a [routerLink]="['/portfolio', project.id]">{{ project.title[lang()] }}</a>
+          </h2>
+          <p class="project-description">{{ project.description[lang()] }}</p>
+          <div class="project-tags">
+            @for (tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+          @if (project.links?.length) {
+            <div class="project-links">
+              @for (link of project.links; track link.url) {
+                <a
+                  pButton
+                  [label]="link.label"
+                  [icon]="link.icon"
+                  [outlined]="true"
+                  size="small"
+                  [href]="link.url"
+                  target="_blank"
+                  rel="noopener"
+                  (click)="$event.stopPropagation()"></a>
+              }
+            </div>
+          }
+        </div>
+      </article>
+    } @empty {
+      <p class="portfolio-empty">{{ 'portfolio.empty' | translate }}</p>
+    }
+  </div>
 </section>

@@ -20,22 +20,22 @@ export interface WorkItem {
 export class HomeSectionWorkComponent {
   works: WorkItem[] = [
     {
-      titleKey: 'work.projects.project1.title',
-      descriptionKey: 'work.projects.project1.description',
-      imageUrl: 'assets/images/work1.jpg',
-      tagsKey: 'work.projects.project1.tags'
+      titleKey: 'work.projects.astroasis.title',
+      descriptionKey: 'work.projects.astroasis.description',
+      imageUrl: 'assets/images/astroasis.svg',
+      tagsKey: 'work.projects.astroasis.tags'
     },
     {
-      titleKey: 'work.projects.project2.title',
-      descriptionKey: 'work.projects.project2.description',
-      imageUrl: 'assets/images/work2.jpg',
-      tagsKey: 'work.projects.project2.tags'
+      titleKey: 'work.projects.simfor.title',
+      descriptionKey: 'work.projects.simfor.description',
+      imageUrl: 'assets/images/simfor.svg',
+      tagsKey: 'work.projects.simfor.tags'
     },
     {
-      titleKey: 'work.projects.project3.title',
-      descriptionKey: 'work.projects.project3.description',
-      imageUrl: 'assets/images/work3.jpg',
-      tagsKey: 'work.projects.project3.tags'
+      titleKey: 'work.projects.greenEagle.title',
+      descriptionKey: 'work.projects.greenEagle.description',
+      imageUrl: 'assets/images/green-eagle.svg',
+      tagsKey: 'work.projects.greenEagle.tags'
     }
   ];
 }

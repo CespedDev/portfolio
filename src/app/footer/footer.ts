@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { ButtonDirective } from 'primeng/button';
 import { Divider } from 'primeng/divider';
 import { TranslatePipe } from '@ngx-translate/core';
+import { SOCIAL_LINKS } from '../shared/social-links';
 
 @Component({
   selector: 'app-footer',
@@ -15,15 +16,12 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Footer {
   currentYear = new Date().getFullYear();
 
-  socialLinks = [
-    { icon: 'pi pi-github', url: 'https://github.com/carlosmmp', label: 'GitHub' },
-    { icon: 'pi pi-linkedin', url: 'https://www.linkedin.com/in/carlosmmp/', label: 'LinkedIn' },
-    { icon: 'pi pi-envelope', url: 'mailto:contact@carlosmmp.com', label: 'Email' }
-  ];
+  socialLinks = SOCIAL_LINKS;
 
   quickLinks = [
     { label: 'nav.home',      route: '/home'      },
     { label: 'nav.portfolio', route: '/portfolio' },
+    { label: 'nav.hobbies',   route: '/hobbies'   },
     { label: 'nav.bio',       route: '/bio'       },
     { label: 'nav.contact',   route: '/contact'   }
   ];

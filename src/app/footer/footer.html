@@ -18,6 +18,23 @@
         }
       </nav>
     </div>
+
+    <div class="footer-section">
+      <h4>{{ 'footer.connect' | translate }}</h4>
+      <div class="footer-social">
+        @for (link of socialLinks; track link.url) {
+          <a
+            pButton
+            [icon]="link.icon"
+            [text]="true"
+            [rounded]="true"
+            [href]="link.url"
+            [attr.aria-label]="link.label"
+            target="_blank"
+            rel="noopener"></a>
+        }
+      </div>
+    </div>
   </div>
 
   <p-divider />

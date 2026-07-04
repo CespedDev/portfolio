@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideHttpClient, HttpClient } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
 import { provideTranslateService, TranslateLoader, TranslationObject } from '@ngx-translate/core';
@@ -18,7 +18,10 @@ export class I18nLoader implements TranslateLoader {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
+    provideRouter(routes, withInMemoryScrolling({
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled'
+    })),
     provideHttpClient(),
     provideTranslateService({
       fallbackLang: 'en',

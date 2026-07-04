@@ -20,6 +20,35 @@
   opacity: 0.9;
 }
 
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator {
+    animation: none;
+  }
+}
+
 @media (max-width: 768px) {
   .name {
     font-size: 2.5rem;
