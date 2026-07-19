@@ -151,6 +151,14 @@ a.p-button {
   border-radius: 0.5rem;
 }
 
+/* Workaround bug PrimeNG 21 (Motion): el wrapper p-motion de la vista previa
+   de p-image se queda con display:none inline y la imagen ampliada nunca
+   aparece (la máscara y la toolbar sí). Forzamos su visibilidad; al cerrar
+   no afecta porque la máscara entera se desmonta del DOM. */
+.p-image-mask p-motion {
+  display: block !important;
+}
+
 /* Encabezado estándar de página (portfolio, hobbies, bio...) */
 .page-header {
   text-align: center;

@@ -75,6 +75,11 @@
   .work-content {
     flex: 1;
     padding: 1.5rem;
+    /* Solapa la imagen para que las esquinas redondeadas queden sobre la foto,
+       en vez de dejar muescas de fondo oscuro entre imagen y descripción */
+    position: relative;
+    margin-top: -0.75rem;
+    border-radius: 0.75rem 0.75rem 0 0;
 
     h3 {
       font-size: 1.25rem;

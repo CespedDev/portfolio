@@ -58,7 +58,9 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-sm);
 
-  ::ng-deep img {
+  /* Solo la miniatura: la imagen ampliada (.p-image-original) del overlay
+     también cuelga del grid y no debe recortarse a 4/3 */
+  ::ng-deep img:not(.p-image-original) {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
