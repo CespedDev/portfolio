@@ -110,7 +110,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       es: 'VR rhythm shooter seleccionado para PlayStation Talents. Director y programador principal del proyecto.',
     },
     links: [
-      { icon: 'pi pi-box', label: 'Itch.io', url: 'https://cespeddev.itch.io' },
+      { icon: 'itch-icon', label: 'Itch.io', url: 'https://cespeddev.itch.io' },
     ],
     content: {
       en: 'AstrOasis is a VR rhythm shooter selected for PlayStation Talents. I direct the project and lead its programming.\n\nThe game mixes rhythm mechanics with shooter gameplay in virtual reality, built in Unity with C#.',
