@@ -15,17 +15,18 @@
 - Sin archivos de test (.spec.ts) - configurado en angular.json
 - Organización por features
 - **SIEMPRE usar componentes de PrimeNG** para mantener coherencia en la UI
-- **i18n con ngx-translate**: Archivos de traducción en `public/assets/i18n/`
+- **i18n propio con signals** (sin librerías): ver sección Internacionalización
 
 ## Internacionalización (i18n)
 
-- Usa **ngx-translate** para traducciones dinámicas
-- Idiomas soportados: Inglés (en) y Español (es)
-- Idioma por defecto: Inglés (en)
-- Archivos de traducción: `public/assets/i18n/en.json` y `es.json`
-- **Todos los textos visibles deben usar el pipe translate**: `{{ 'key' | translate }}`
+- **Sistema propio basado en signals, sin ngx-translate** (fue eliminado del proyecto)
+- Idiomas soportados: Inglés (en, por defecto) y Español (es)
+- `src/app/shared/lang.ts`: tipo `Localized` (`{ en, es }`), `injectLang()` (señal de solo lectura con el idioma actual) y `setLang()` (cambia idioma, persiste en localStorage y actualiza `<html lang>`)
+- **Textos de interfaz** (labels, títulos, botones): objeto `UI` en `src/app/shared/ui-texts.ts`
+- **Contenido** (proyectos, hobbies, bio, timeline): campos `Localized` en los archivos de datos de cada feature
+- En plantillas: `readonly t = UI; readonly lang = injectLang();` en el componente y `{{ t.seccion.clave[lang()] }}` en el HTML
+- **Al añadir nuevo texto**: rellenar siempre ambos idiomas `{ en, es }`
 - Selector de idioma en el topbar (icono globe, alterna EN/ES)
-- **Al añadir nuevo texto**: Agregar claves en ambos archivos JSON
 
 ## Estilos y CSS
 
@@ -69,18 +70,27 @@
 
 - Build output: carpeta `docs/` (para GitHub Pages)
 - `baseHref`: `/portfolio/`
-- El `TranslateLoader` carga i18n desde `/assets/i18n/` — los archivos deben estar en `public/assets/i18n/`
-- Comando de build: `ng build`
+- Comando de build: `npm run build` (ejecuta `ng build` y `move-build.js`, que aplana `docs/browser/` en `docs/` y genera `404.html`)
 
 ## Rutas
 
-- Única ruta implementada: `/home` → `HomePage`
-- **Rutas pendientes de implementar** (están en la navbar pero redirigen a home):
-  - `/portfolio`
-  - `/hobbies`
-  - `/bio`
-  - `/contact`
+- Rutas registradas en `src/app/app.routes.ts` (lazy loading): `/home`, `/portfolio`, `/hobbies`, `/bio`, `/contact`
+- `/home` es la única página con contenido completo; el resto son stubs pendientes de contenido
 - Al crear una nueva página: añadir componente en su carpeta feature y registrar la ruta en `src/app/app.routes.ts`
+
+## Proyectos del Portfolio (patrón tipo blog)
+
+- Los proyectos viven en **un único archivo**: `src/app/portfolio-page/portfolio-projects.ts`
+- Para añadir/editar un proyecto: copiar el bloque de plantilla comentado en ese archivo y rellenarlo (título y descripción llevan EN/ES inline)
+- Dos categorías: `professional` (trabajo profesional) y `personal` (proyectos por cuenta propia)
+- Campo opcional `featured: true`: el proyecto aparece en "Trabajos Destacados" de la home (máx. 3)
+- Imágenes de proyectos en `public/assets/images/` (referenciadas como `assets/images/...`)
+- Los textos de UI de la página (títulos, filtros, estado vacío) están en `src/app/shared/ui-texts.ts` (sección `portfolio`)
+- Cada tarjeta enlaza a su página de detalle `/portfolio/:id` (`project-detail-page/`)
+- Campos opcionales del detalle: `content` (texto largo EN/ES, párrafos separados por `\n\n`; si falta se muestra `description`) y `gallery` (array de imágenes extra)
+- El mismo patrón de datos se usa en otras páginas: `hobbies-page/hobbies-data.ts` (intros, juegos favoritos, fotos de `public/assets/images/photography/`) y `bio-page/bio-data.ts` (historia, hitos, grupos de skills)
+- La experiencia de la home (timeline) se edita en el array de `home-page/home-section-timeline/home-section-timeline.ts`
+- Contacto: el formulario de `contact-page/` envía a Formspree si se configura `CONTACT_ENDPOINT` en `contact-page.ts`; sin configurar, abre mailto a `CONTACT_EMAIL` (definido en `src/app/shared/social-links.ts`)
 
 ## Especificaciones del Proyecto
 
