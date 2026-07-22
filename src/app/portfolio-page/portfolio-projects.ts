@@ -13,13 +13,13 @@ export interface PortfolioProject {
   category: ProjectCategory;
   featured?: boolean;      // opcional: se muestra en "Trabajos Destacados" de la home (máx. 3)
   year: string;            // texto libre: '2024' o '2024 — Present'
-  image: string;           // ruta bajo assets/, p. ej. 'assets/images/mi-proyecto.png'
+  image: string;           // ruta bajo assets/, p. ej. 'assets/images/mi-proyecto.png' (portada de la tarjeta y 1ª imagen del carrusel)
   tags: string[];          // tecnologías o etiquetas
   title: Localized;
   description: Localized;  // resumen corto para la tarjeta del grid
   links?: ProjectLink[];   // opcional: botones bajo la descripción
   content?: Localized;     // opcional: texto largo de la página de detalle; separa párrafos con una línea en blanco (\n\n)
-  gallery?: string[];      // opcional: imágenes adicionales para la página de detalle
+  gallery?: string[];      // opcional: imágenes extra; se muestran junto a `image` en el carrusel de la página de detalle
 }
 
 /*
@@ -46,7 +46,8 @@ export interface PortfolioProject {
  *     en: 'First paragraph.\n\nSecond paragraph.',
  *     es: 'Primer párrafo.\n\nSegundo párrafo.',
  *   },
- *   // Opcional: imágenes extra del detalle.
+ *   // Opcional: imágenes extra del detalle. Se muestran, junto a `image`,
+ *   // como carrusel en la página de detalle (flechas + indicadores).
  *   gallery: ['assets/images/mi-proyecto-2.png', 'assets/images/mi-proyecto-3.png'],
  * },
  * ─────────────────────────────────────────────────────────────────────

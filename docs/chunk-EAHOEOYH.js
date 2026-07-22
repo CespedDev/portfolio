@@ -1,4 +1,4 @@
-import{Fa as c,Kb as f,Va as p,Wa as h,Wb as v,Xa as d,Ya as g,Yb as _,bb as n,cb as o,db as u,kb as m,ta as i,xb as y,yb as l,zb as s}from"./chunk-VJYKMV5U.js";var P={en:`I'm Carlos Cabrera, a video game developer focused on programming. I studied Video Game Design and Development at UDIT (2020\u20132024), where I earned honors in programming subjects and discovered that what I enjoy most is building the systems that make play feel good.
+import{Fa as c,Kb as f,Va as p,Wa as h,Xa as d,Xb as v,Ya as g,Zb as _,bb as n,cb as o,db as u,kb as m,ta as i,xb as y,yb as l,zb as s}from"./chunk-3H7DRUIN.js";var P={en:`I'm Carlos Cabrera, a video game developer focused on programming. I studied Video Game Design and Development at UDIT (2020\u20132024), where I earned honors in programming subjects and discovered that what I enjoy most is building the systems that make play feel good.
 
 Professionally I've worked on an airport operations simulator (SIMFOR) as a C# / Unity programmer and QA tester, built a serious game for wind farm control simulation for Green Eagle Solutions, and today I work as a full stack developer with Angular and Spring Boot at Soltel.
 

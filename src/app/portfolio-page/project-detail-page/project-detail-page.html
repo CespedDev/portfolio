@@ -35,8 +35,23 @@
       </div>
     </header>
 
-    <div class="detail-image">
-      <img [src]="project.image" [alt]="project.title[lang()]" />
+    <div class="detail-carousel" [class.single]="images().length < 2">
+      <p-galleria
+        [value]="images()"
+        [showThumbnails]="false"
+        [showIndicators]="images().length > 1"
+        [showIndicatorsOnItem]="true"
+        [showItemNavigators]="images().length > 1"
+        [circular]="images().length > 1"
+        [containerStyle]="{ width: '100%' }">
+        <ng-template #item let-image>
+          <img
+            class="carousel-image"
+            [src]="image"
+            [alt]="project.title[lang()]"
+            loading="lazy" />
+        </ng-template>
+      </p-galleria>
     </div>
 
     <div class="detail-content content-card">
@@ -44,14 +59,6 @@
         <p>{{ paragraph }}</p>
       }
     </div>
-
-    @if (project.gallery?.length) {
-      <div class="detail-gallery">
-        @for (image of project.gallery; track image) {
-          <img [src]="image" [alt]="project.title[lang()]" loading="lazy" />
-        }
-      </div>
-    }
   } @else {
     <div class="detail-not-found">
       <p>{{ t.portfolio.notFound[lang()] }}</p>

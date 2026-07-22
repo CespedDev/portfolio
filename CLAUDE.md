@@ -88,6 +88,7 @@
 - Los textos de UI de la página (títulos, filtros, estado vacío) están en `src/app/shared/ui-texts.ts` (sección `portfolio`)
 - Cada tarjeta enlaza a su página de detalle `/portfolio/:id` (`project-detail-page/`)
 - Campos opcionales del detalle: `content` (texto largo EN/ES, párrafos separados por `\n\n`; si falta se muestra `description`) y `gallery` (array de imágenes extra)
+- La página de detalle muestra las imágenes en un carrusel (PrimeNG `p-galleria`): la portada `image` es la primera diapositiva y las de `gallery` la siguen. Con una sola imagen se ocultan flechas e indicadores
 - El mismo patrón de datos se usa en otras páginas: `hobbies-page/hobbies-data.ts` (intros, juegos favoritos, fotos de `public/assets/images/photography/`) y `bio-page/bio-data.ts` (historia, hitos, grupos de skills)
 - La experiencia de la home (timeline) se edita en el array de `home-page/home-section-timeline/home-section-timeline.ts`
 - Contacto: el formulario de `contact-page/` envía a Formspree si se configura `CONTACT_ENDPOINT` en `contact-page.ts`; sin configurar, abre mailto a `CONTACT_EMAIL` (definido en `src/app/shared/social-links.ts`)

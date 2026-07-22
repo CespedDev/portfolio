@@ -39,15 +39,32 @@
   gap: 0.5rem;
 }
 
-.detail-image {
+.detail-carousel {
   border-radius: 0.5rem;
   overflow: hidden;
 
-  img {
+  .carousel-image {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+  }
+
+  ::ng-deep .p-galleria {
+    border: none;
+    background: transparent;
+  }
+
+  // Flechas de navegación siempre visibles (también en móvil/táctil)
+  ::ng-deep .p-galleria-prev-button,
+  ::ng-deep .p-galleria-next-button {
+    background: color-mix(in srgb, var(--p-surface-900) 55%, transparent);
+    color: var(--p-surface-0);
+
+    &:hover {
+      background: color-mix(in srgb, var(--p-surface-900) 75%, transparent);
+      color: var(--p-surface-0);
+    }
   }
 }
 
@@ -63,20 +80,6 @@
     &:last-child {
       margin-bottom: 0;
     }
-  }
-}
-
-.detail-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-sm);
-
-  img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border-radius: 0.5rem;
   }
 }
 
